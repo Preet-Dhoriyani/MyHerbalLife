@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      gap: 20px;
+    }
+
+    .logo {
+      white-space: nowrap;
+    }
+
+    .header-search {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-search input {
+      padding: 10px 40px 10px 15px;
+      width: 280px;
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      background: white url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat right 12px center;
+      background-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .header-search input:focus {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transform: scale(1.03);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table th,
+    table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    tbody tr:hover {
+      background-color: #e8f5e9;
+    }
+
+    table a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    table a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: #e8edf0;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header-search {
+        width: 100%;
+      }
+
+      .header-search input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">MyHerbalLife</div>
+
+      <div class="header-search">
+        <input type="text" id="searchInput" placeholder="Search by place or host...">
+      </div>
+
+      <nav>
+        <a href="index.html">Back to Home</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Date/Time</th>
+            <th>Place</th>
+            <th>Event Host</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="event-table-body">
+          <!-- JavaScript will inject rows here -->
+        </tbody>
+      </table>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+          <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+          <a href="https://x.com/herbalife">Twitter</a>
+          <a href="https://www.youtube.com/Herbalife">YouTube</a>
+        </div>
+        <div class="footer-column">
+          <h3>Help</h3>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="privacy policy.html">Privacy Policy</a>
+          <a href="terms of use.html">Terms Of Use</a>
+        </div>
+        <div class="footer-column">
+          <h3>Learn</h3>
+          <a href="usage.html">How to make a shake</a>
+        </div>
+        <div class="footer-column">
+          <h3>Details</h3>
+          <p>Mo. no.: 8000033177</p>
+          <p>Email: dhoriyanipreet@gmail.com</p>
+          <p>Name - Preet Dhoriyani</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MyHerbalLife. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    let allEvents = [];
+
+    fetch('events.json')
+      .then(res => res.json())
+      .then(data => {
+        allEvents = data.events || data; // supports both object & array
+        renderTable(allEvents);
+      })
+      .catch(err => console.error("Error loading events:", err));
+
+    function renderTable(events) {
+      const tbody = document.getElementById('event-table-body');
+      tbody.innerHTML = '';
+      events.forEach((event, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${event.dateTime}</td>
+          <td>${event.place}</td>
+          <td>${event.host}</td>
+          <td>${event.location ? `<a href="${event.location}" target="_blank">Location</a>` : 'N/A'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const keyword = this.value.toLowerCase();
+      const filtered = allEvents.filter(event =>
+        event.place.toLowerCase().includes(keyword) ||
+        event.host.toLowerCase().includes(keyword)
+      );
+      renderTable(filtered);
+    });
+  </script>
+</body>
+
+</html>

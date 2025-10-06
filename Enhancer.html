@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhancer - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 24px;
+      gap: 20px;
+    }
+
+    .logo {
+      flex: 1;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    /* Search bar */
+    .search-container {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container input:focus {
+      border-color: #2e7d32;
+      box-shadow: 0 0 8px rgba(46, 125, 50, 0.6);
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 15px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      padding: 20px 15px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .product-card img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+
+    .product-card p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .product-card strong {
+      font-size: 17px;
+      color: #2e7d32;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .product-card button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #121212;
+      color: #ccc;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      gap: 20px;
+    }
+
+    .footer-column {
+      min-width: 180px;
+      margin: 10px;
+    }
+
+    .footer-column h3 {
+      color: #5ab9ea;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: #ccc;
+      margin: 6px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">MyHerbalLife</div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" />
+    </div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-grid" id="productGrid">
+      <!-- Products loaded by JS -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      {
+        name: "Cell-U-Loss",
+        quantity: "90 Tablets",
+        mrp: "₹ 1916.0",
+        points: "15.75",
+        img: "CellUloss.png",
+      },
+      {
+        name: "Cell Activator",
+        quantity: "60 Tablets",
+        mrp: "₹ 2489.0",
+        points: "21.95",
+        img: "callActivator.png",
+      },
+      {
+        name: "Herbal Control",
+        quantity: "90 Tablets",
+        mrp: "₹ 3858.0",
+        points: "32.95",
+        img: "HerbalControl.png",
+      },
+      {
+        name: "Multivitamin Mineral",
+        quantity: "90 Tablets",
+        mrp: "₹ 2252.0",
+        points: "19.95",
+        img: "Multivitamin90.png",
+      },
+    ];
+
+    function loadProducts(list = products) {
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = "";
+      list.forEach(p => {
+        grid.innerHTML += `
+          <div class="product-card">
+            <img src="${p.img}" alt="${p.name}">
+            <p><strong>${p.name}</strong><br>
+            Quantity: ${p.quantity}<br>
+            MRP: ${p.mrp}<br>
+            Points: ${p.points}</p>
+            <button>Add to Cart</button>
+          </div>
+        `;
+      });
+    }
+
+    function filterProducts() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+      loadProducts(filtered);
+    }
+
+    loadProducts();
+  </script>
+</body>
+
+</html>

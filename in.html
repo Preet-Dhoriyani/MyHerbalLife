@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student List</h1>
+    <div id="students"></div>
+
+    <h1>Event List</h1>
+    <div id="events"></div>
+
+    <script>
+        const data = {
+            students: [
+                { id: "23DCE101", name: "Aarav Patel", branch: "Computer" },
+                { id: "23DCE102", name: "Meera Shah", branch: "IT" }
+            ],
+            events: [
+                { title: "Tech Talk", date: "2025-08-10" },
+                { title: "Hackathon", date: "2025-08-20" }
+            ]
+        };
+
+        const studentDiv = document.getElementById("students");
+        data.students.forEach(student => {
+            const p = document.createElement("p");
+            p.textContent = `Name: ${student.name}, ID: ${student.id}, Branch: ${student.branch}`;
+            studentDiv.appendChild(p);
+        });
+
+        const eventDiv = document.getElementById("events");
+        data.events.forEach(event => {
+            const p = document.createElement("p");
+            p.textContent = `Title: ${event.title}, Date: ${event.date}`;
+            eventDiv.appendChild(p);
+        });
+
+    </script>
+</body>
+
+</html>

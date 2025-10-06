@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Afresh - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      flex: 1;
+      max-width: 500px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 5px 15px;
+      border-radius: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #2e7d32;
+      font-weight: bold;
+      padding-left: 8px;
+      user-select: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 15px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+
+    .product-card img {
+      max-width: 100px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      margin: 0;
+    }
+
+    .product-card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+      color: #2e7d32;
+    }
+
+    .product-card button {
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">MyHerbalLife</div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search product..." onkeyup="filterProducts()" />
+      <button onclick="filterProducts()">🔍</button>
+    </div>
+
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-grid" id="productGrid">
+      <!-- Products will be loaded here by JS -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      { name: "Afresh Lemon", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "AfreshLemon.png" },
+      { name: "Afresh Ginger", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "afreshginger.png" },
+      { name: "Afresh Elaichi", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "afreshelaichi.png" },
+      { name: "Afresh Tulsi", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "afreshtulsi.png" },
+      { name: "Afresh Peach", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "afreshpeach.png" },
+      { name: "Afresh Cinnamon", quantity: "50 g", mrp: "₹ 913.0", points: "7.80", img: "afreshcinnamon.png" },
+      { name: "Afresh Kashmiri Kahwa", quantity: "40 g", mrp: "₹ 913.0", points: "7.80", img: "Kashmirikahwa40.png" }
+    ];
+
+    function loadProducts(filteredList = products) {
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = "";
+      filteredList.forEach(p => {
+        grid.innerHTML += `
+          <div class="product-card">
+            <img src="${p.img}" alt="${p.name}">
+            <p><strong>${p.name}</strong>
+            Quantity: ${p.quantity} <br>
+            MRP: ${p.mrp} <br>
+            Points: ${p.points}</p>
+            <button>Add to Cart</button>
+          </div>
+        `;
+      });
+    }
+
+    function filterProducts() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+      loadProducts(filtered);
+    }
+
+    
+    loadProducts();
+  </script>
+</body>
+
+</html>

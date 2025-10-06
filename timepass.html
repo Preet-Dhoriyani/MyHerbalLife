@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input[type=password], input[type=submit] { padding: 10px; margin-top: 10px; }
+        .error { color: red; font-size: 14px; }
+        .success { color: green; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <h2>Signup Form</h2>
+
+    <form id="signupForm" onsubmit="return validatePassword()">
+        <label>Password:</label><br>
+        <input type="password" id="password" required><br>
+        <div id="message" class="error"></div><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            const lengthCheck = password.length >= 8;
+            const uppercaseCheck = /[A-Z]/.test(password);
+            const lowercaseCheck = /[a-z]/.test(password);
+            const numberCheck = /[0-9]/.test(password);
+            const specialCharCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+            if (!lengthCheck || !uppercaseCheck || !lowercaseCheck || !numberCheck || !specialCharCheck) {
+                message.innerHTML = `
+                    <ul>
+                        <li>Password must be at least 8 characters</li>
+                        <li>Include uppercase (A-Z)</li>
+                        <li>Include lowercase (a-z)</li>
+                        <li>Include number (0-9)</li>
+                        <li>Include special character (!@#$%^&*)</li>
+                    </ul>`;
+                return false;
+            }
+
+            message.innerHTML = "<span class='success'>Password is valid ✅</span>";
+            return true;
+        }
+    </script>
+
+</body>
+</html>

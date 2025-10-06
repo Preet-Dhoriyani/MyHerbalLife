@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product - MyHerbalLife</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: Arial, sans-serif; }
+    .wrapper { min-height: 100%; display: flex; flex-direction: column; }
+
+    /* HEADER */
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      gap: 20px;
+    }
+    .logo { white-space: nowrap; }
+    .header-search { flex: 1; display: flex; justify-content: center; }
+    .header-search input {
+      padding: 10px 40px 10px 15px;
+      width: 280px;
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background: white url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat right 12px center;
+      background-size: 18px;
+      transition: all 0.3s ease;
+    }
+    .header-search input:focus {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transform: scale(1.03);
+    }
+    nav a { color: white; text-decoration: none; font-size: 16px; }
+    nav a:hover { text-decoration: underline; }
+
+    /* MAIN */
+    main { flex: 1; padding: 40px; background-color: #f5f5f5; text-align: center; }
+    .product-link {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border: 1px solid #2e7d32;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .product-link:hover { background-color: #2e7d32; color: white; }
+
+    /* FOOTER */
+    footer { background-color: #1c1c1c; color: white; padding: 40px 20px 20px 20px; font-size: 14px; }
+    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: left; }
+    .footer-column { margin: 10px; min-width: 150px; }
+    .footer-column h3 { color: #42a5f5; margin-bottom: 10px; }
+    .footer-column a { display: block; text-decoration: none; color: #dee5e8; margin: 4px 0; transition: 0.3s ease; }
+    .footer-column a:hover { color: #ffffff; text-decoration: underline; }
+    .footer-column p { margin: 5px 0; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; color: #ccc; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 10px; }
+      .header-search { width: 100%; }
+      .header-search input { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">MyHerbalLife</div>
+      <div class="header-search">
+        <input type="text" id="searchInput" placeholder="Search products...">
+      </div>
+      <nav>
+        <a href="index.html">Back to Home</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <h1>Our Products</h1>
+      <div id="product-list"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+          <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+          <a href="https://x.com/herbalife">Twitter</a>
+          <a href="https://www.youtube.com/Herbalife">YouTube</a>
+        </div>
+        <div class="footer-column">
+          <h3>Help</h3>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="privacy policy.html">Privacy Policy</a>
+          <a href="terms of use.html">Terms Of Use</a>
+        </div>
+        <div class="footer-column">
+          <h3>Learn</h3>
+          <a href="usage.html">How to make a shake</a>
+        </div>
+        <div class="footer-column">
+          <h3>Details</h3>
+          <p>Mo. no.: 8000033177</p>
+          <p>Email: dhoriyanipreet@gmail.com</p>
+          <p>Name - Preet Dhoriyani</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MyHerbalLife. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    let allProducts = [];
+
+    fetch("products.json")
+      .then(res => res.json())
+      .then(products => {
+        allProducts = products;
+        renderProducts(allProducts);
+      })
+      .catch(err => console.error("Failed to load products:", err));
+
+    function renderProducts(products) {
+      const container = document.getElementById("product-list");
+      container.innerHTML = '';
+      products.forEach(product => {
+        const a = document.createElement("a");
+        a.href = product.file;
+        a.textContent = product.name;
+        a.className = "product-link";
+        container.appendChild(a);
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const keyword = this.value.toLowerCase();
+      const filtered = allProducts.filter(product =>
+        product.name.toLowerCase().includes(keyword)
+      );
+      renderProducts(filtered);
+    });
+  </script>
+</body>
+
+</html>

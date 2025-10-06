@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyHerbalLife - Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f6fff8;
+    }
+
+     header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+    }
+ nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+   footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+
+    /* FORM CONTAINER */
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 650px;
+      margin: 40px auto;
+      box-shadow: 0 0 12px rgba(0, 100, 0, 0.1);
+    }
+
+    .container h2 {
+      color: #2e7d32;
+      border-bottom: 2px solid #81c784;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+      color: #2e7d32;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #bdbdbd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .rating,
+    .recommend {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .rating-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85em;
+      margin-top: 5px;
+      color: #777;
+    }
+
+    button[type="submit"] {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MyHerbalLife</div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <!-- FORM CONTAINER -->
+  <div class="container">
+    <h2>Feedback Form</h2>
+    <form>
+      <label for="name">Enter your Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Enter Your Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label>How Would you rate our product? *</label>
+      <div class="rating">
+        <label><input type="radio" name="rating" value="1" required> 1</label>
+        <label><input type="radio" name="rating" value="2"> 2</label>
+        <label><input type="radio" name="rating" value="3"> 3</label>
+        <label><input type="radio" name="rating" value="4"> 4</label>
+        <label><input type="radio" name="rating" value="5"> 5</label>
+      </div>
+      <div class="rating-labels">
+        <span>Very Poor</span>
+        <span>Excellent</span>
+      </div>
+
+      <label for="like">What do you like the most about us?</label>
+      <textarea id="like" name="like" rows="2"></textarea>
+
+      <label for="improve">Any Suggestion For improvement?</label>
+      <textarea id="improve" name="improve" rows="2"></textarea>
+
+      <label>Would you recommend us to others? *</label>
+      <div class="recommend">
+        <label><input type="radio" name="recommend" value="yes" required> Yes</label>
+        <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+        <label><input type="radio" name="recommend" value="no"> No</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

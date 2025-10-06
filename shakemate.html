@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShakeMate - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box {
+      padding: 10px 15px;
+      width: 300px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .search-box:focus {
+      border-color: #2e7d32;
+      box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+    }
+
+    main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 20px;
+    }
+
+    th img {
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: #eaedee;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">MyHerbalLife</div>
+    <div class="search-container">
+      <input type="text" class="search-box" id="searchInput" placeholder="Search product...">
+    </div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <table id="productTable">
+      <tr>
+        <th>
+          <img src="shakemate.png" alt="Shakemate" width="100" />
+          <p>
+            Name: ShakeMate <br />
+            Quantity: 500 g <br />
+            MRP (incl. of all taxes): ₹ 733.0 <br />
+            Points: 6.45
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <td><button type="button">Add to Cart</button></td>
+      </tr>
+    </table>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live search functionality
+    const searchInput = document.getElementById('searchInput');
+    const productTable = document.getElementById('productTable');
+
+    searchInput.addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+
+      // Get all product header <th> elements (products)
+      const productHeaders = productTable.querySelectorAll('tr:first-child th');
+      // Get second row <td> elements (buttons)
+      const productButtons = productTable.querySelectorAll('tr:nth-child(2) td');
+
+      productHeaders.forEach((th, index) => {
+        // Get the text inside <p> in this <th>
+        const productText = th.textContent.toLowerCase();
+
+        if (productText.includes(filter)) {
+          th.style.display = '';
+          productButtons[index].style.display = '';
+        } else {
+          th.style.display = 'none';
+          productButtons[index].style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

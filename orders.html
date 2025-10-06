@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up Page</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      z-index: -1;
+      opacity: 0.4;
+      animation: zoomPulse 20s ease-in-out infinite alternate;
+      filter: brightness(0.5) blur(2px);
+    }
+
+    @keyframes zoomPulse {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.05);
+      }
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 420px;
+      animation: floatIn 1s ease-out forwards;
+      backdrop-filter: blur(6px);
+    }
+
+    @keyframes floatIn {
+      from {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .form-container h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      border: 2px solid black;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      background-color: #f4f6f8;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: black;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: #999;
+      font-size: 14px;
+      transition: 0.3s ease;
+      pointer-events: none;
+      background: white;
+      padding: 0 5px;
+    }
+
+    .input-group input:focus+label,
+    .input-group input:not(:placeholder-shown)+label {
+      top: -8px;
+      left: 10px;
+      font-size: 12px;
+      color: #0072ff;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      font-size: 14px;
+      color: #0072ff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+
+    .toggle-password:hover {
+      text-decoration: underline;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+
+    .buttons button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 12px 0;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #0072ff;
+      color: white;
+      border: 2px solid black;
+    }
+
+    .buttons button:hover {
+      background-color: #005ecc;
+      transform: scale(1.02);
+    }
+
+    .register {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .register a {
+      color: #0072ff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .register a:hover {
+      color: #005ecc;
+      text-decoration: underline;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .forgot-password a {
+      color: #dc3545;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1><big><big>Desk4U</big></big></h1>
+    <h2><big><big>Login / Sign Up page</big></big></h2>
+    <form onsubmit="return validateLogin();">
+      <div class="input-group">
+        <input name="username" id="username" placeholder=" " required="" type="text">
+        <label for="username">Username</label>
+      </div>
+      <div class="input-group">
+        <input name="password" id="password" placeholder=" " required="" type="password">
+        <label for="password">Password</label>
+        <button type="button" class="toggle-password" onclick="togglePassword(this)">Show</button>
+      </div>
+      <div class="buttons">
+        <button type="reset">Reset</button>
+        <button type="submit">Login</button>
+      </div>
+      <div class="forgot-password">
+        <p><a href="RESET.html" target="_self">Forgot password? Reset here</a></p>
+      </div>
+      <div class="register">
+        <p>Don't have an account? <a href="REGISTRATIONPAGE.html" target="_self">Register Now</a></p>
+        <p>© 2025 Desk4U • All rights are reserved.</p>
+      </div>
+    </form>
+  </div>
+  <script>
+    function togglePassword(button) {
+      const pwd = document.getElementById("password");
+      if (pwd.type === "password") {
+        pwd.type = "text";
+        button.textContent = "Hide";
+      } else {
+        pwd.type = "password";
+        button.textContent = "Show";
+      }
+    }
+    function validateLogin() {
+      const username = document.getElementById("username").value.trim().toLowerCase();
+      const password = document.getElementById("password").value.trim();
+      const validUsernames = ["24dce027", "24dec027"];
+      const validPassword = "10082007Aa@";
+      if (validUsernames.includes(username) && password === validPassword) {
+        window.location.href = "DASHBOARD.html";
+        return false;
+      } else {
+        alert("Invalid username or password.");
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

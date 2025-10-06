@@ -1,0 +1,52 @@
+{
+  "events": [
+    {
+      "dateTime": "13-07-2025 / 7:00 to 9:00",
+      "place": "Ahmedabad",
+      "host": "Virat Kohli",
+      "location": "https://www.google.com/maps/place/Taj+Skyline,+Ahmedabad/"
+    },
+    {
+      "dateTime": "20-07-2025 / 7:30 to 9:30",
+      "place": "Vadodara",
+      "host": "Shraddha Kapoor",
+      "location": "https://www.google.com/maps/place/Vijay+Villas+Palace/"
+    },
+    {
+      "dateTime": "27-07-2025 / 7:00 to 9:00",
+      "place": "Morbi",
+      "host": "Akshay Kumar",
+      "location": "https://www.google.com/maps/place/Mani+mandir/"
+    },
+    {
+      "dateTime": "10-08-2025 / 6:00 to 8:30",
+      "place": "Surat",
+      "host": "John Abraham",
+      "location": "https://www.google.com/maps/place/P+P+Savani+Vidhya+Bhavan/"
+    },
+    {
+      "dateTime": "24-08-2025 / 7:00 to 9:00",
+      "place": "Mumbai",
+      "host": "Mukesh Ambani",
+      "location": "https://www.google.com/maps/place/Taj+Hotel/"
+    },
+    {
+      "dateTime": "31-08-2025 / 7:15 to 9:45",
+      "place": "Delhi",
+      "host": "Vijay Rupani",
+      "location": "https://www.google.com/maps/place/Lal+Qila,+Chandni+Chowk,+Delhi"
+    },
+    {
+      "dateTime": "07-09-2025 / 7:00 to 9:30",
+      "place": "Bangluru",
+      "host": "Vijay Mallya",
+      "location": "https://www.google.com/maps/place/M.Chinnaswamy+Stadium/"
+    },
+    {
+      "dateTime": "14-09-2025 / 6:00 to 8:30",
+      "place": "Chennai",
+      "host": "M S Dhoni",
+      "location": "https://www.google.com/maps/place/chepauk+stadium/"
+    }
+  ]
+}

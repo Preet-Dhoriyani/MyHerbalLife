@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="registration page.css" />
+  </head>
+  <body>
+    <div>
+      <a href="index.html"> <img src="home.png" width="50" /></a>
+    </div>
+    <div class="form-container">
+      <img
+        src="logo.png"
+        width="100px"
+        height="70px"
+        style="display: flex; align-content: center"
+      />
+      <h2>Register</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
+          <div class="error" id="nameError"></div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error" id="emailError"></div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+          <div class="error" id="PhoneError"></div>
+        </div>
+        <div class="form-group">
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" required />
+          <div class="error" id="passwordError"></div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">confirm Password</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm-password"
+            required
+          />
+          <div class="error" id="ConfirmPasswordError"></div>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+      <div class="form-footer">
+        Already have an account? <a href="login page.html">Login</a>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          document.getElementById("nameError").textContent = "";
+          document.getElementById("emailError").textContent = "";
+          document.getElementById("PhoneError").textContent = "";
+          document.getElementById("passwordError").textContent = "";
+          document.getElementById("ConfirmPasswordError").textContent = "";
+
+          const name = document.getElementById("fullname").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirm_password").value;
+
+          let isValid = true;
+
+          if (name === "") {
+            document.getElementById("nameError").textContent =
+              "Please enter your name.";
+            isValid = false;
+          }
+
+          const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+          if (!emailRegex.test(email)) {
+            document.getElementById("emailError").textContent =
+              "Enter a valid email.";
+            isValid = false;
+          }
+
+          const phoneRegex = /^[0-9]{10}$/;
+          if (!phoneRegex.test(phone)) {
+            document.getElementById("PhoneError").textContent =
+              "Enter a valid 10-digit phone number.";
+            isValid = false;
+          }
+
+          if (password.length < 6) {
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 6 characters.";
+            isValid = false;
+          }
+
+          if (password !== confirmPassword) {
+            document.getElementById("ConfirmPasswordError").textContent =
+              "Passwords do not match.";
+            isValid = false;
+          }
+
+          if (isValid) {
+            alert("Registration Successful!");
+            document.getElementById("registrationForm").reset();
+          }
+        });
+    </script>
+  </body>
+</html>

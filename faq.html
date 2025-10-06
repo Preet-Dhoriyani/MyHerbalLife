@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: #2e7d32;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 12px;
+      background-color: #e8f5e9;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+      background-color: #c8e6c9;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #f1f8e9;
+      color: #555;
+      line-height: 1.5;
+      padding: 0 12px;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 10px 12px;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+
+    a {
+      color: #2e7d32;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #1b5e20;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">MyHerbalLife</div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Frequently Asked Questions (FAQ)</h1>
+
+    <div class="faq-item">
+      <div class="faq-question">1. What is MyHerbalLife?</div>
+      <div class="faq-answer">MyHerbalLife is an online platform that provides herbal and natural health products for your daily wellness and beauty needs.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">2. Are your products 100% herbal?</div>
+      <div class="faq-answer">Yes, all our products are made from natural ingredients and are free from harmful chemicals.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">3. How can I place an order?</div>
+      <div class="faq-answer">You can browse our products, add them to your cart, and complete your purchase through our simple signup and login process.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">4. Do you offer home delivery?</div>
+      <div class="faq-answer">Yes, we offer fast and reliable home delivery all over India.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">5. What if I receive a damaged product?</div>
+      <div class="faq-answer">If you receive a damaged item, please contact our support team within 48 hours for a replacement or refund.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">6. How can I contact customer support?</div>
+      <div class="faq-answer">You can reach us through our <a href="contact.html">Contact Us</a> page or email us at support@myherballife.com.</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const questions = document.querySelectorAll(".faq-question");
+
+      questions.forEach(question => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+
+          document.querySelectorAll(".faq-answer").forEach(ans => {
+            if (ans !== answer) {
+              ans.classList.remove("open");
+            }
+          });
+
+          answer.classList.toggle("open");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

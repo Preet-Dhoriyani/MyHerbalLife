@@ -1,0 +1,3 @@
+Name,Email,Role,PasswordHash
+Preet,dhoriyanipreet@gmail.com,user,$2y$10$eXc4LgRAGT8QpLM7zFlrOOWwR1S1rN28bw6yJ4K8N0rK0EwH9W9xi
+Admin,admin@gmail.com,admin,$2y$10$8Hk9mH0Wm5m6RWg6I5hv5up3om1HkVcrw8pQGQFWb7zZr1E3pGvOy

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formula 1 - MyHerbalLife</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Search bar */
+    .header-search {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .header-search input {
+      padding: 10px 40px 10px 15px;
+      width: 300px;
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      background: white url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat right 12px center;
+      background-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .header-search input:focus {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transform: scale(1.03);
+    }
+
+    /* Products grid */
+    #productContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-info {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 40px 20px 20px 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .footer-column {
+      margin: 10px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: #d5e2e8;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">MyHerbalLife</div>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+    </div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <div id="productContainer">
+    <div class="product-card">
+      <img src="Kulfi.png" alt="Formula 1 Nutritional shake mix Kulfi 750 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹3627.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Kulfi<br />
+        <strong>Quantity:</strong> 750 g<br />
+        <strong>Points:</strong> 32.65
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="mango.png" alt="Formula 1 Nutritional shake mix Mango 750 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹3627.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Mango<br />
+        <strong>Quantity:</strong> 750 g<br />
+        <strong>Points:</strong> 32.65
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="RoseKheer.png" alt="Formula 1 Nutritional shake mix Rose Kheer 750 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹3627.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Rose Kheer<br />
+        <strong>Quantity:</strong> 750 g<br />
+        <strong>Points:</strong> 32.65
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="Vannila.png" alt="Formula 1 Nutritional shake mix Vanilla 750 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹3627.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Vanilla<br />
+        <strong>Quantity:</strong> 750 g<br />
+        <strong>Points:</strong> 32.65
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="kulfi500.png" alt="Formula 1 Nutritional shake mix Kulfi 500 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹2449.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Kulfi<br />
+        <strong>Quantity:</strong> 500 g<br />
+        <strong>Points:</strong> 21.75
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="strawberry.png" alt="Formula 1 Nutritional shake mix Strawberry 500 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹2449.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Strawberry<br />
+        <strong>Quantity:</strong> 500 g<br />
+        <strong>Points:</strong> 21.75
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="Banana.png" alt="Formula 1 Nutritional shake mix Banana Caramel 500 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹2449.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Banana Caramel<br />
+        <strong>Quantity:</strong> 500 g<br />
+        <strong>Points:</strong> 21.75
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="paan.png" alt="Formula 1 Nutritional shake mix Paan 500 g" />
+      <div class="product-info">
+        <strong>MRP:</strong> ₹2449.0<br />
+        <strong>Name:</strong> Formula 1 Nutritional shake mix Paan<br />
+        <strong>Quantity:</strong> 500 g<br />
+        <strong>Points:</strong> 21.75
+      </div>
+      <button type="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <a href="https://www.facebook.com/HerbalifeIndiaOfficial/">Facebook</a>
+        <a href="https://www.instagram.com/herbalifeindiaofficial/">Instagram</a>
+        <a href="https://x.com/herbalife">Twitter</a>
+        <a href="https://www.youtube.com/Herbalife">YouTube</a>
+      </div>
+      <div class="footer-column">
+        <h3>Help</h3>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="privacy policy.html">Privacy Policy</a>
+        <a href="terms of use.html">Terms Of Use</a>
+      </div>
+      <div class="footer-column">
+        <h3>Learn</h3>
+        <a href="usage.html">How to make a shake</a>
+      </div>
+      <div class="footer-column">
+        <h3>Details</h3>
+        <p>Mo. no.: 8000033177</p>
+        <p>Email: dhoriyanipreet@gmail.com</p>
+        <p>Name - Preet Dhoriyani</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MyHerbalLife. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('#productContainer .product-card');
+
+    searchInput.addEventListener('input', () => {
+      const filter = searchInput.value.toLowerCase();
+
+      products.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
